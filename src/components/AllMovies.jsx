@@ -237,7 +237,7 @@ var c=1;
 
     const getDatas = () => {
       
-        axios.get(`http://localhost:2345/movies?page=${page}&size=10`).then(({ data }) => {
+        axios.get(`https://compa-assig.herokuapp.com/movies?page=${page}&size=10`).then(({ data }) => {
             // console.log(data.movies)
           setMovieD(data.movies)
 
@@ -245,7 +245,7 @@ var c=1;
       };
 
       let handleRemove = (e) => {
-        axios.delete(`http://localhost:2345/movies/${e._id}`)
+        axios.delete(`https://compa-assig.herokuapp.com/movies/${e._id}`)
             .then((res) => {
               getDatas()
             
