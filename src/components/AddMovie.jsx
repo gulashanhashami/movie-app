@@ -1,7 +1,7 @@
 import axios from "axios";
 import { useState } from "react";
 import styled from "styled-components";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 const Stylediv=styled.div`
 font-family:   Arial, sans-serif;
  .title{
@@ -53,7 +53,7 @@ font-family:   Arial, sans-serif;
 `;
 export const AddMovie=()=>{
 const [pdata, setData] =useState({})
-
+ let navigate=useNavigate();
 const handleChange=(e)=>{
    let key=e.target.name;
        setData(
@@ -74,7 +74,10 @@ const handleChange=(e)=>{
           
            e.preventDefault();
            axios.post(`https://compa-assig.herokuapp.com/movies`, pdata).then((res)=>{
-            alert("Added successfully");
+            if(pdata.price!==0){
+                alert("To make a payment");
+                navigate("/allmovie")
+            }
               setData({
                 movie_name:"",
                 movie_title:"",
