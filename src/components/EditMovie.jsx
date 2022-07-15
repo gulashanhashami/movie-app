@@ -55,7 +55,7 @@ export const EditMovie=()=>{
   const [newData, setNewData] = useState([]);
     let { _id } = useParams();
     useEffect(()=>{
-    axios.get(`http://localhost:2345/movies/${_id}`).then((data)=>{
+    axios.get(`https://compa-assig.herokuapp.com/movies/${_id}`).then((data)=>{
       // console.log(data.data)
        setMdata(data.data.movies);
     })
@@ -81,7 +81,7 @@ export const EditMovie=()=>{
        e.preventDefault();
         axios({
           method: "patch",
-          url: `http://localhost:2345/movies/${_id}`,
+          url: `https://compa-assig.herokuapp.com/movies/${_id}`,
           data: {
             _id: mdata._id,
             movie_name: newData.movie_name || mdata.movie_name,

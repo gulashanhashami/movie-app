@@ -73,7 +73,7 @@ const handleChange=(e)=>{
        <form onSubmit={(e)=>{
           
            e.preventDefault();
-           axios.post(`http://localhost:2345/movies`, pdata).then((res)=>{
+           axios.post(`https://compa-assig.herokuapp.com/movies`, pdata).then((res)=>{
             alert("Added successfully");
               setData({
                 movie_name:"",
