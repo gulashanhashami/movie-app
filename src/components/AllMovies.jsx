@@ -58,7 +58,7 @@ import {Link} from "react-router-dom";
 th{
     font-weight: bold;
     font-size: 1.4vw;
-    /* border: 2px solid grey; */
+  
 }
 td{
   font-size: 1.2vw;
