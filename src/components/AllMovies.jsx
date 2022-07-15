@@ -136,7 +136,7 @@ h1{
     flex-direction: row;
  width: 85%;
     height: 4.3vh; 
-    //  border: 2px solid red; 
+  
 }
 .in{
   width:93%;
