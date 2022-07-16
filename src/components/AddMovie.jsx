@@ -74,7 +74,7 @@ const handleChange=(e)=>{
           
            e.preventDefault();
            axios.post(`https://compa-assig.herokuapp.com/movies`, pdata).then((res)=>{
-            if(pdata.price!==0){
+            if(pdata.price>0){
                 alert("To make a payment");
                 navigate("/allmovie")
             }
