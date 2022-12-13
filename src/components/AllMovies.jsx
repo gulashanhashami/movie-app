@@ -250,6 +250,7 @@ var c=1;
       let handleRemove = (e) => {
         axios.delete(`https://movieserver-ehfq.onrender.com/movies/${e._id}`)
             .then((res) => {
+              alert("Deleted successfully");
               getDatas()
             
             })
@@ -343,7 +344,10 @@ var c=1;
                          <td>{item.movie_rating}</td>
                          <td>
                                <button id="btn3" onClick={()=>{
+                                let confirm=window.confirm("Are you sure you want to delete it?");
+                                if(confirm){
                                  handleRemove(item)
+                                }
                                }}>
                                  Delete
                                </button>
