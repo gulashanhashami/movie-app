@@ -250,6 +250,7 @@ const Navbardiv= styled.div`
         width:150px;
         padding:3%;
         color:white;
+        cursor:pointer;
         background-color: black;
         border: 2px solid black;
         border-radius:.3vw;
