@@ -11,6 +11,7 @@ import {Link} from "react-router-dom";
 
 .filter{
   width: 20%;
+  cursor:pointer;
   font-weight: bold;
   font-size: 1.2vw;
   height: 3.5vh;
@@ -102,7 +103,7 @@ h1{
     border-radius: .3vw;
     background-color: blue;
     border:.2vw solid blue;
-   
+    cursor:pointer;
   }
   #btn1:hover{
     background-color: white;
@@ -111,6 +112,7 @@ h1{
   #btn2{
     color:white;
     font-size:1.2vw;
+    cursor:pointer;
     border-radius: .3vw;
     background-color: blue;
     border:.2vw solid blue;
@@ -122,6 +124,7 @@ h1{
   }
 #btn3{
     color:white;
+    cursor:pointer;
     font-size:1.2vw;
     border-radius: .3vw;
     background-color: red;
@@ -209,7 +212,7 @@ color: red;
 .pagebtn{
   width: 27%;
   height: 4vh;
-
+  cursor:pointer;
   color: white;
   font-size: 1vw;
   font-weight: bold;
@@ -237,7 +240,7 @@ var c=1;
 
     const getDatas = () => {
       
-        axios.get(`https://compa-assig.herokuapp.com/movies?page=${page}&size=10`).then(({ data }) => {
+        axios.get(`https://movieserver-ehfq.onrender.com/movies?page=${page}&size=10`).then(({ data }) => {
             // console.log(data.movies)
           setMovieD(data.movies)
 
@@ -245,7 +248,7 @@ var c=1;
       };
 
       let handleRemove = (e) => {
-        axios.delete(`https://compa-assig.herokuapp.com/movies/${e._id}`)
+        axios.delete(`https://movieserver-ehfq.onrender.com/movies/${e._id}`)
             .then((res) => {
               getDatas()
             
@@ -358,8 +361,8 @@ var c=1;
             </tbody>
          </table> 
          <div className="btndiv">
-         <button className="pagebtn" onClick={()=>{setPage(page-1)}}>previous</button> 
-         <button className="pagebtn" onClick={()=>{setPage(page+1)}}>next</button>
+         <button className="pagebtn" onClick={()=>{setPage(page-1)}}>Previous</button> 
+         <button className="pagebtn" onClick={()=>{setPage(page+1)}}>Next</button>
          </div>
           </div>
          )}

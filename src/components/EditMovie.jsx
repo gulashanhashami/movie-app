@@ -27,6 +27,7 @@ p{
 }
 .option{
     width: 45%;
+    cursor:pointer;
     height: 4.3vh;
     font-size:1.2vw;
 }
@@ -37,6 +38,7 @@ p{
     font-size:1.2vw;
     background-color: green;
     color: white;
+    cursor:pointer;
     border: 2px solid green;
     border-radius: 3px;
     margin-left: 14%;
@@ -44,6 +46,7 @@ p{
 #btn:hover{
     background-color: white;
     color: red;
+    cursor:pointer;
 }
 h2{
   margin-left:27%;
@@ -55,7 +58,7 @@ export const EditMovie=()=>{
   const [newData, setNewData] = useState([]);
     let { _id } = useParams();
     useEffect(()=>{
-    axios.get(`https://compa-assig.herokuapp.com/movies/${_id}`).then((data)=>{
+    axios.get(`https://movieserver-ehfq.onrender.com/movies/${_id}`).then((data)=>{
       // console.log(data.data)
        setMdata(data.data.movies);
     })
@@ -69,10 +72,6 @@ export const EditMovie=()=>{
             ...newData,
             [key]:e.target.value,
           };
-          inputData = {
-            ...newData,
-            [key]:e.target.value,
-          };
     
         setNewData(inputData);
       }
@@ -81,7 +80,7 @@ export const EditMovie=()=>{
        e.preventDefault();
         axios({
           method: "patch",
-          url: `https://compa-assig.herokuapp.com/movies/${_id}`,
+          url: `https://movieserver-ehfq.onrender.com/movies/${_id}`,
           data: {
             _id: mdata._id,
             movie_name: newData.movie_name || mdata.movie_name,

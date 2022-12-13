@@ -32,12 +32,14 @@ font-family:   Arial, sans-serif;
   }
   .option{
       width: 45%;
+      cursor:pointer;
       height: 4.3vh;
       font-size:1.2vw;
   }
   #btn{
       width: 30%;
       height: 4.5vh;
+      cursor:pointer;
       font-weight: bold;
       font-size:1.2vw;
       background-color: green;
@@ -73,7 +75,7 @@ const handleChange=(e)=>{
        <form onSubmit={(e)=>{
           
            e.preventDefault();
-           axios.post(`https://compa-assig.herokuapp.com/movies`, pdata).then((res)=>{
+           axios.post(`https://movieserver-ehfq.onrender.com/movies`, pdata).then((res)=>{
             if(pdata.price>0){
                 alert("To make a payment");
                 navigate("/allmovie")
