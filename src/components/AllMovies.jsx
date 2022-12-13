@@ -250,8 +250,8 @@ var c=1;
       let handleRemove = (e) => {
         axios.delete(`https://movieserver-ehfq.onrender.com/movies/${e._id}`)
             .then((res) => {
-              alert("Deleted successfully");
               getDatas()
+              alert("Deleted successfully");
             
             })
             .catch((err) => {
